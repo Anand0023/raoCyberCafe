@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rao Solution Hub</title>
+  <link rel="icon" type="image/png" href="./assets/images/raocybercafe-logoFinal.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  .service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .service-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    z-index: 10;
+  }
+  .service-card img {
+    border-radius: 1rem;
+    object-fit: contain;
+  }
+    .scroll-container::-webkit-scrollbar {
+      display: none;
+    }
+  .marquee-container {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+    }
+    .marquee-track {
+      display: flex;
+      width: fit-content;
+      animation: marquee 80s linear infinite;
+    }
+     .marquee-track:hover {
+    animation-play-state: paused;
+  }
+    @keyframes marquee {
+      0% { transform: translateX(10); }
+      100% { transform: translateX(-50%); }
+    }
+</style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+<!-- Header -->
+<header class="bg-gradient-to-r from-teal-600 via-cyan-500 to-sky-400 text-white shadow-xl">
+  <div class="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center">
+    <!-- Logo and Title -->
+    <div class="flex items-center space-x-4">
+      <a href="index.html" class="w-20 h-20 bg-white p-2 rounded-full shadow-lg transition-transform duration-300 flex items-center justify-center">
+        <img src="./assets/images/raoSolutionHub-logofinal.png" alt="Rao Cyber Cafe Logo" class="w-full h-full object-contain">
+      </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="hidden md:flex space-x-4 text-base font-medium">
+      <a href="index.html" class="px-4 py-1.5 rounded-lg bg-gradient-to-r from-white to-gray-100 text-teal-700 font-semibold shadow-md hover:from-teal-500 hover:to-teal-700 hover:text-white hover:shadow-xl hover:scale-105 transition duration-300 ease-in-out">
+        Home
+      </a>
+      <a href="#services" class="px-4 py-1.5 rounded-lg bg-white text-gray-700 font-medium shadow hover:bg-gradient-to-r hover:from-teal-500 hover:to-teal-700 hover:text-white hover:shadow-xl hover:scale-105 transition duration-300 ease-in-out">
+        Services
+      </a>
+      <a href="#contact" class="px-4 py-1.5 rounded-lg bg-white text-gray-700 font-medium shadow hover:bg-gradient-to-r hover:from-teal-500 hover:to-teal-700 hover:text-white hover:shadow-xl hover:scale-105 transition duration-300 ease-in-out">
+        Contact
+      </a>
+       <a href="#help" class="px-4 py-1.5 rounded-lg bg-white text-gray-700 font-medium shadow hover:bg-gradient-to-r hover:from-teal-500 hover:to-teal-700 hover:text-white hover:shadow-xl hover:scale-105 transition duration-300 ease-in-out">
+        Help
+      </a>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <div class="md:hidden">
+ <button id="menu-toggle" class="focus:outline-none">
+  <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M3 5h18M6 12h12M3 19h18" />
+  </svg>
+</button> 
+
+    </div>
+  </div>
+
+  <!-- Mobile Dropdown -->
+  <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 space-y-2">
+    <a href="index.html" class="block  px-4 rounded hover:bg-teal-600 transition">Home</a>
+    <a href="#services" class="block px-4 rounded hover:bg-teal-600 transition">Services</a>
+    <a href="#contact" class="block px-4 rounded hover:bg-teal-600 transition">Contact</a>
+    <a href="#help" class="block px-4 rounded hover:bg-teal-600 transition">Help</a>
+  </div>
+</header>
+<!-- Header Ends-->
+
+<!-- Hero Section -->
+<section class="bg-gradient-to-r from-cyan-50 via-blue-50 to-purple-50 pt-8 md:pt-14 pb-4 text-center shadow-inner">
+  <div class="max-w-7xl mx-auto px-3 md:px-6">
+    <h2 class="text-3xl md:text-6xl font-bold text-cyan-600 drop-shadow-lg">Rao Solution Hub...</h2>
+    <h1 class="text-[13px] md:text-3xl font-bold text-gray-800 leading-tight tracking-tight mt-2 md:mt-4">Fast, Easy, and Reliable Digital Solutions for You!</h1>
+   <p class="mt-1.5 md:mt-3 text-sm md:text-md text-gray-700 max-w-2xl mx-auto leading-relaxed"> Enjoy reliable and friendly digital services — from CSC and LIC help to everyday support. We make your tasks easier with care and commitment. Trusted by many, designed for you.</p>
+    <div class="mt-3 md:mt-6">
+      <a href="#services" class="inline-block px-4 py-2 md:px-6 md:py-2 bg-cyan-600 text-white text-md md:text-lg font-semibold rounded-full shadow-xl hover:bg-cyan-700 hover:scale-105 transition-transform duration-300 transform-gpu ease-in-out">Explore Our Services</a>
+    </div>
+  </div>
+</section>
+<!-- Hero Section Ends-->
+
+<!-- Services Section -->
+<section id="services" class="max-w-7xl mx-auto px-4 pt-3 md:pt-6 pb-6 md:pb-14 font-[Poppins]">
+  <div class="grid gap-5 md:gap-8 md:grid-cols-2 items-start">
+    <!-- CSC Services -->
+    <div class="bg-gradient-to-br from-cyan-500 via-blue-500 to-purple-500 rounded-2xl shadow-2xl px-3 py-1.5 md:px-4 md:py-2 transition-transform duration-300 hover:scale-105">
+      <h3 class="text-[#FFFFFF] text-xl md:text-3xl font-semibold mb-2.5 border-b border-white/40 pb-1">CSC Services</h3>
+      <ul class="list-disc list-inside space-y-1 md:space-y-2 text-sm md:text-base text-[#000000] font-bold">
+        <li>Aadhar Update & Print</li>
+        <li>PAN Card Services</li>
+        <li>Birth & Death Certificate</li>
+        <li>Ration Card Services</li>
+        <li>Ayushman Bharat Card</li>
+        <li class="hidden">Bill Payments (Electricity, Gas, Water)</li>
+        <li class="hidden">Income, Caste & Residence Certificate</li>
+        <li class="hidden">Government Forms Filling</li>
+        <li class="hidden">E-Shram Card Registration</li>
+        <li class="hidden">Driving License Application</li>
+        <li class="hidden">Voter ID Apply & Correction</li>
+        <li class="hidden">Railway Ticket Booking</li>
+        <li class="hidden">Scholarship Form Submission</li>
+        <li class="hidden">Banking & Insurance Services</li>
+        <li class="hidden">FASTag Registration & Recharge</li>
+        <li class="hidden">Passport Services</li>
+        <li class="hidden">Mobile Number Portability</li>
+        <li class="hidden">Gas Connection Services (New/Transfer)</li>
+        <li class="hidden">EPIC (Election Card) Correction</li>
+        <li class="hidden">Widow Pension Application</li>
+        <li class="hidden">Old Age Pension Registration</li>
+        <li class="hidden">RTI (Right to Information) Filing Assistance</li>
+        <li class="hidden">eDistrict Services</li>
+        <li class="hidden">Health Card Registration</li>
+        <li class="hidden">Insurance Policy Submission & Updates</li>
+        <li class="hidden">Telecom Services (New Connections, Bill Payments)</li>
+        <li class="hidden">Electric Vehicle Charging Station Registration</li>
+        <li class="hidden">Online Exam Form Submission</li>
+        <li class="hidden">Mobile Recharge & Bill Payments</li>
+      </ul>
+          <button class="border border-blue-600 text-white rounded-full px-3 py-1 md:px-4 md:py-2 mt-2 md:mt-4 hover:bg-blue-600 hover:text-white transition duration-300 shadow-lg flex items-center gap-2" onclick="toggleServices(this)">View All Services</button>
+    </div>
+
+    <!-- Cyber Cafe Services -->
+    <div class="bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500 rounded-2xl shadow-2xl px-3 py-1.5 md:px-4 md:py-2 transition-transform duration-300 hover:scale-105">
+      <h3 class="text-white text-xl md:text-3xl font-semibold mb-2.5 border-b border-white/40 pb-1">Cyber Cafe Services</h3>
+      <ul class="list-disc list-inside space-y-1 md:space-y-2 text-sm md:text-base text-black font-bold">
+        <li>Printing (Color/BW) & Scanning</li>
+        <li>Online Form Filling</li>
+        <li>Resume & Document Creation</li>
+        <li>Internet Browsing</li>
+        <li>Lamination & Photocopy</li>
+        <li class="hidden">Emailing & Online Submissions</li>
+        <li class="hidden">Photo Editing & Passport Size Photo Print</li>
+        <li class="hidden">Job Applications & Admit Card Download</li>
+        <li class="hidden">College Admission Forms</li>
+        <li class="hidden">Digital Signature Certificate (DSC)</li>
+        <li class="hidden">Typing & Page Formatting</li>
+        <li class="hidden">Wi-Fi Internet Access</li>
+        <li class="hidden">Social Media Account Management</li>
+        <li class="hidden">Blog and Website Design</li>
+        <li class="hidden">Video Conferencing & Virtual Meetings</li>
+        <li class="hidden">Content Writing & Proofreading</li>
+        <li class="hidden">CD/DVD Copying & Data Backup</li>
+        <li class="hidden">Mobile Recharge & Bill Payments</li>
+        <li class="hidden">Courier & Parcel Services</li>
+        <li class="hidden">File Conversions (PDF, DOCX, etc.)</li>
+        <li class="hidden">Web Hosting & Domain Registration</li>
+        <li class="hidden">Computer and Laptop Repairs</li>
+      </ul>
+         <button class="border border-red-600 text-white rounded-full px-3 py-1 md:px-4 md:py-2 mt-2 md:mt-4 hover:bg-red-600 hover:text-white transition duration-300 shadow-lg flex items-center gap-2" onclick="toggleServices(this)">View All Services</button>
+    </div>
+
+    <!-- LIC Services -->
+    <div class="bg-gradient-to-br from-yellow-400 via-orange-500 to-red-500 rounded-2xl shadow-2xl px-3 py-1.5 md:px-4 md:py-2 transition-transform duration-300 hover:scale-105">
+      <h3 class="text-white text-xl md:text-3xl font-semibold mb-2.5 border-b border-white/40 pb-1">LIC Services</h3>
+      <ul class="list-disc list-inside space-y-1 md:space-y-2 text-sm md:text-base text-black font-bold">
+        <li>New Policy Consultation</li>
+        <li>Premium Payment Support</li>
+        <li>Policy Renewal & Updates</li>
+        <li>Loan Against Policy</li>
+        <li>Policy Surrender Guidance</li>
+        <li class="hidden">Claim Assistance</li>
+        <li class="hidden">NEFT Form Submission</li>
+        <li class="hidden">Death Claim Processing</li>
+        <li class="hidden">Online Portal Access Support</li>
+        <li class="hidden">Policy Bond Reissue</li>
+        <li class="hidden">Term Insurance Plans</li>
+        <li class="hidden">Endowment Policies</li>
+        <li class="hidden">Child Plan Guidance</li>
+        <li class="hidden">Retirement Plans (Pension Plans)</li>
+        <li class="hidden">Investment in ULIPs (Unit Linked Insurance Plans)</li>
+        <li class="hidden">Tax Saving Schemes</li>
+        <li class="hidden">Health Insurance Policy Integration</li>
+        <li class="hidden">Top-Up Plans for Extra Coverage</li>
+        <li class="hidden">Accident Insurance Coverage</li>
+        <li class="hidden">Loan Prepayment Assistance</li>
+        <li class="hidden">Policy Loan Services</li>
+        <li class="hidden">Tax-free Maturity Benefit Calculation</li>
+      </ul>
+          <button class="border border-orange-600 text-white rounded-full px-3 py-1 md:px-4 md:py-2 mt-2 md:mt-4 hover:bg-orange-600 hover:text-white transition duration-300 shadow-lg flex items-center gap-2" onclick="toggleServices(this)">View All Services</button>
+    </div>
+
+    <!-- Health Insurance -->
+    <div class="bg-gradient-to-br from-emerald-500 via-teal-500 to-sky-500 rounded-2xl shadow-2xl px-3 py-1.5 md:px-4 md:py-2 transition-transform duration-300 hover:scale-105">
+      <h3 class="text-white text-xl md:text-3xl font-semibold mb-2.5 border-b border-white/40 pb-1">Health Insurance</h3>
+      <ul class="list-disc list-inside space-y-1 md:space-y-2 text-sm md:text-base text-black font-bold">
+        <li>SIP, Mutual Fund Guidance</li>
+        <li>Emergency Fund Planning</li>
+        <li>Critical Illness Coverage</li>
+        <li>Mediclaim and Hospitalization Plans</li>
+        <li>Loan EMI & Budget Planning</li>
+        <li class="hidden">Tax Planning Support</li>
+        <li class="hidden">Health Score Analysis</li>
+        <li class="hidden">Family Health Goals</li>
+        <li class="hidden">Term Loan and Credit Score Review</li>
+        <li class="hidden">Retirement & Village Stay Planning</li>
+        <li class="hidden">Accidental Insurance</li>
+        <li class="hidden">Personal Accident Coverage</li>
+        <li class="hidden">Family Floater Plans</li>
+        <li class="hidden">Critical Illness Rider Add-ons</li>
+        <li class="hidden">Pre and Post Hospitalization Support</li>
+        <li class="hidden">Health Risk Assessment</li>
+        <li class="hidden">Senior Citizen Health Plans</li>
+        <li class="hidden">Group Health Insurance Plans</li>
+        <li class="hidden">Cashless Hospitalization Assistance</li>
+        <li class="hidden">Maternity and Newborn Health Plans</li>
+        <li class="hidden">Dental & Vision Coverage</li>
+      </ul>
+          <button class="border border-teal-600 text-white rounded-full px-3 py-1 md:px-4 md:py-2 mt-2 md:mt-4 hover:bg-teal-600 hover:text-white transition duration-300 shadow-lg flex items-center gap-2" onclick="toggleServices(this)">View All Services</button>
+    </div>
+
+  </div>
+</section>
+<!-- Services Section Ends-->
+
+<!-- Review Section -->
+<section class="px-1 py-4 md:py-10 bg-gradient-to-r from-blue-200 via-blue-100 to-blue-200">
+  <div class="max-w-4xl mx-auto text-center">
+<h2 class="text-xl md:text-4xl font-extrabold mb-1.5 md:mb-4 text-gray-900 tracking-wide">Voices of Our Happy Clients</h2>
+  <p class="text-xs md:text-md text-gray-700 max-w-3xl mx-auto mb-2 md:mb-6">
+  At Rao Solution Hub, we don’t just offer services — we build relationships based on trust, speed, and excellence. See what our clients have to say about their experience with us.
+</p>
+  </div>
+
+  <div class="marquee-container overflow-hidden relative">
+    <div class="marquee-track flex space-x-4 md:space-x-6 p-2 md:p-4" id="marquee-track">
+      <!-- Cards inserted dynamically -->
+    </div>
+  </div>
+  <template id="testimonial-card-template">
+  <div class="min-w-[300px] max-w-md bg-white rounded-2xl p-3 md:p-6 shadow-lg flex flex-col justify-betweenborder border-gray-200 hover:shadow-2xl transition-shadow duration-300">
+    <div class="flex items-center space-x-4 mb-2 md:mb-4">
+      <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client photo" class="w-14 h-14 rounded-full object-cover border-2 border-indigo-500">
+      <div>
+        <p class="text-lg font-semibold text-gray-900">Jessica Pearson</p>
+        <p class="text-yellow-400 flex items-center space-x-1">
+          <span>★★★★★</span>
+          <span class="text-sm text-gray-500 ml-2">(120 reviews)</span>
+        </p>
+      </div>
+    </div>
+    <p class="text-gray-700 text-sm leading-relaxed mb-2 md:mb-6">
+      "Working with this team was an absolute pleasure. Their professionalism and attention to detail exceeded my expectations. Highly recommend!"
+    </p>
+  </div>
+</template>
+
+</section>
+<!-- Review Section End -->
+
+<!-- 24/7 Help  Section -->
+<section id="help" class="bg-gradient-to-br from-[#e0f7fa] via-[#d1c4e9] to-[#b3e5fc] text-gray-800 transition-all duration-500 py-4 md:py-8 px-4 md:px-16">
+  <div>
+    <!-- Header with Call Button -->
+    <h3 class="text-2xl md:text-3xl font-bold mb-3 md:mb-6 border-b-4 border-gray-400 pb-2">
+      <a href="tel:+919468104827" class="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-gradient-to-br from-[#e0f7fa] via-[#d1c4e9] to-[#b3e5fc] text-gray-900 shadow hover:shadow-md transition-all duration-300 hover:bg-violet-100 group">
+        <i class="fas fa-headset text-violet-600 text-md md:text-2xl group-hover:scale-110 transition-transform duration-300"></i>
+        <span class="text-[#1E90FF] group-hover:text-violet-700 transition-colors duration-300 text-sm md:text-2xl">24/7 Help Desk – Tap to Call</span>
+      </a>
+    </h3>
+    <!-- Description Paragraph -->
+    <p class="text-base font-semibold md:text-lg mb-3 md:mb-6 text-gray-700 hover:text-gray-900 transition-colors duration-300">
+      Whether you're from a city or village, we offer complete support for essential services, including Aadhaar, banking, schemes, health insurance, LIC, and more.
+    </p>
+    <!-- Service List -->
+    <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4 text-sm md:text-base font-medium">
+  <!-- Identity & Financial Services -->
+  <li class="flex items-center gap-3 hover:text-indigo-600 transition">
+    <i class="fas fa-id-card text-indigo-500"></i> Aadhaar Card Update & Print
+  </li>
+  <li class="flex items-center gap-3 hover:text-indigo-600 transition">
+    <i class="fas fa-address-card text-indigo-500"></i> PAN Card Apply / Correction
+  </li>
+  <li class="flex items-center gap-3 hover:text-indigo-600 transition">
+    <i class="fas fa-rupee-sign text-indigo-500"></i> DBT / Jan Dhan / PF Help
+  </li>
+  <!-- Health Services -->
+  <li class="flex items-center gap-3 hover:text-indigo-600 transition">
+    <i class="fas fa-clinic-medical text-indigo-500"></i> Ayushman Bharat Card / Health ID
+  </li>
+  <li class="flex items-center gap-3 hover:text-indigo-600 transition">
+    <i class="fas fa-notes-medical text-indigo-500"></i> Health Insurance & LIC
+  </li>
+  <li class="flex items-center gap-3 hover:text-indigo-600 transition">
+    <i class="fas fa-heartbeat text-indigo-500"></i> ABHA Card & eSanjeevani Support
+  </li>
+  <!-- Welfare & Support Services -->
+  <li class="flex items-center gap-3 hover:text-indigo-600 transition">
+    <i class="fas fa-home text-indigo-500"></i> Ration Card / PM Awas Yojana
+  </li>
+  <li class="flex items-center gap-3 hover:text-indigo-600 transition">
+    <i class="fas fa-female text-indigo-500"></i> Kanya Vivah / Beti Bachao Scheme
+  </li>
+  <li class="flex items-center gap-3 hover:text-indigo-600 transition">
+    <i class="fas fa-ring text-indigo-500"></i>Shaadi / Marriage Support
+  </li>
+  <li class="flex items-center gap-3 hover:text-indigo-600 transition">
+    <i class="fas fa-gift text-indigo-500"></i> Ladli Laxmi / Girl Child Welfare
+  </li>
+  <!-- Utility Services -->
+  <li class="flex items-center gap-3 hover:text-indigo-600 transition">
+    <i class="fas fa-mobile-alt text-indigo-500"></i> Mobile, FASTag & Utility Bill Payment
+  </li>
+  <li class="flex items-center gap-3 hover:text-indigo-600 transition">
+    <i class="fas fa-cloud text-indigo-500"></i> DigiLocker / eDistrict Services
+  </li>
+</ul>
+    <!-- Action Buttons -->
+<div class="mt-4 md:mt-8 flex flex-col md:flex-row items-center gap-4 md:gap-8">
+  <!-- Chat Now Button -->
+  <a href="https://wa.me/919468104827" target="_blank" rel="noopener noreferrer">
+    <button class="flex items-center gap-3 px-3 py-1 md:px-5 md:py-2 rounded-full border border-white bg-gradient-to-r from-violet-500 via-blue-400 to-cyan-400 text-white font-semibold hover:from-violet-600 hover:to-cyan-500 transition-all duration-300 transform hover:scale-110 shadow-lg">
+      <i class="fas fa-comments text-lg md:text-xl"></i> Chat Now <span class="text-xl">→</span>
+    </button>
+  </a>
+  <!-- Join Community Button -->
+  <a href="https://chat.whatsapp.com/LmVHQ6fJdyR80tU85TBYgO" target="_blank" rel="noopener noreferrer">
+    <button class="flex items-center gap-3 px-3 py-1 md:px-5 md:py-2 rounded-full border border-white bg-gradient-to-r from-green-500 via-teal-400 to-blue-400 text-white font-semibold hover:from-green-600 hover:to-blue-500 transition-all duration-300 transform hover:scale-110 shadow-lg">
+      <i class="fas fa-users text-lg md:text-xl"></i> Join Our Community <span class="text-xl">→</span>
+    </button>
+  </a>
+  <!-- About Developer Button -->
+  <div class="md:ml-auto"><button id="developerBtn" class="flex items-center gap-3 px-3 py-1 md:px-5 md:py-2 rounded-full border border-white bg-gradient-to-r from-green-500 via-teal-400 to-blue-400 text-white font-semibold hover:from-green-600 hover:to-blue-500 transition-all duration-300 transform hover:scale-110 shadow-lg"><i class="fas fa-laptop-code text-lg md:text-xl" onclick="toggleDeveloperSection()"></i> About Developer...</button></div>
+</div>
+  </div>
+</section>
+<!-- 24/7 Help  Section Ends-->
+
+<!-- Contact Section -->
+<section id="contact" class="bg-gradient-to-r from-yellow-600 via-indigo-500 to-blue-700 py-8 md:py-10 px-3">
+  <div class="max-w-7xl mx-auto px-2 py-2 md:px-8 md:pb-2 rounded-xl shadow-2xl">
+ <h2 class="text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-900 via-orange-500 to-yellow-600 text-center md:text-left"> Get in Touch</h2>
+    <div class="grid md:grid-cols-2 gap-2 mt-4 md:mt-8">
+      <!-- Contact Information -->
+ <div class="space-y-2 md:space-y-4 text-white text-center md:text-left">
+
+  <p class="text-sm md:text-lg font-medium">
+    <a 
+      href="https://www.google.com/maps/search/Near+Main+Bus+Stand,+Mastapur,+Rewari,+123401" 
+      target="_blank" 
+      class="hover:text-indigo-300 transition inline-flex items-center">
+     Address:- Near Main Bus Stand, Mastapur, Rewari, 123401
+    </a>
+  </p>
+
+  <p class="text-sm md:text-lg font-medium">
+    <a 
+      href="tel:+919468104827" 
+      class="hover:text-indigo-300 transition inline-flex items-center">
+      Phone:- +91-9468104827
+    </a>
+  </p>
+
+  <p class="text-sm md:text-lg font-medium">
+    <a 
+      href="mailto:raosolutionhub5@gmail.com" 
+      class="hover:text-indigo-300 transition inline-flex items-center">
+     Email:- raosolutionhub5@gmail.com
+    </a>
+  </p>
+
+</div>
+
+
+
+
+      <!-- Google Map iframe -->
+      <div class="w-full h-60 md:h-76 relative rounded-xl overflow-hidden mt-2 md:mt-0">
+        <iframe class="w-full h-full"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3513.2262802733126!2d76.60937267449599!3d28.291468799488758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d5c9dd1219e8b%3A0x89eba3a11f9b6e4f!2sMastapur%20Bus%20Stand!5e0!3m2!1sen!2sin!4v1746865193755!5m2!1sen!2sin" 
+          style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Contact Section End -->
+
+<!-- Scrolling Services Logo Section -->
+ <div class="bg-gradient-to-r from-blue-200 via-blue-100 to-blue-200 relative w-full overflow-hidden">
+  <div id="service-strip" class="flex overflow-x-auto scroll-smooth space-x-2 md:space-x-6 px-3 py-6 scroll-container">
+    <!-- Repeatable Card Format -->
+    <div class="flex-shrink-0 bg-white p-4 rounded-xl shadow w-40 h-40 flex justify-center items-center">
+      <img src="./assets/images/360_F_355890573_4YJdlh4OKAzlVHrw7uOztwahjFDwhTac.jpg" alt="photo" class="w-full h-full object-contain" />
+    </div>
+    <div class="flex-shrink-0 bg-white p-4 rounded-xl shadow w-40 h-40 flex justify-center items-center">
+      <img src="./assets/images/depositphotos_222673112-stock-photo-male-hands-paper-cut-family.jpg" alt="photo" class="w-full h-full object-contain" />
+    </div>
+    <div class="flex-shrink-0 bg-white p-4 rounded-xl shadow w-40 h-40 flex justify-center items-center">
+      <img src="./assets/images/haryana-logo.jpg" alt="photo" class="w-full h-full object-contain" />
+    </div>
+    <div class="flex-shrink-0 bg-white p-4 rounded-xl shadow w-40 h-40 flex justify-center items-center">
+      <img src="./assets/images/HealthInsurance.webp" alt="photo" class="w-full h-full object-contain" />
+    </div>
+    <div class="flex-shrink-0 bg-white p-4 rounded-xl shadow w-40 h-40 flex justify-center items-center">
+      <img src="./assets/images/illustration-of-the-various-types-of-insurance-2E3GENX.jpg" alt="photo" class="w-full h-full object-contain" />
+    </div>
+    <div class="flex-shrink-0 bg-white p-4 rounded-xl shadow w-40 h-40 flex justify-center items-center">
+      <img src="./assets/images/india-gov-logo.jpg" alt="photo" class="w-full h-full object-contain" />
+    </div>
+    <div class="flex-shrink-0 bg-white p-4 rounded-xl shadow w-40 h-40 flex justify-center items-center">
+      <img src="./assets/images/Lic Logo Png.jpeg" alt="photo" class="w-full h-full object-contain" />
+    </div>
+    <div class="flex-shrink-0 bg-white p-4 rounded-xl shadow w-40 h-40 flex justify-center items-center">
+      <img src="./assets/images/parivar-pehchan-logo.jpg" alt="photo" class="w-full h-full object-contain" />
+    </div>
+    <div class="flex-shrink-0 bg-white p-4 rounded-xl shadow w-40 h-40 flex justify-center items-center">
+      <img src="./assets/images/pension.jpg" alt="photo" class="w-full h-full object-contain" />
+    </div>
+    <div class="flex-shrink-0 bg-white p-4 rounded-xl shadow w-40 h-40 flex justify-center items-center">
+      <img src="./assets/images/shaadi.jpg" alt="photo" class="w-full h-full object-contain" />
+    </div>
+  </div>
+</div>
+<!-- Scrolling Services Logo Section Ends-->
+
+<!-- Footer -->
+<footer class="bg-gradient-to-r from-teal-600 via-cyan-900 to-sky-400 text-white py-2 md:py-4">
+  <div class="max-w-7xl mx-auto px-2 flex flex-col justify-center items-center space-y-6">
+    <div class="text-center space-y-0.5 md:space-y-1">
+      <p class="text-[11px] md:text-base font-normal opacity-80">All Rights Reserved. &copy; 2025 RAO CYBER CAFE. </p>
+      <p class="text-[10px] md:text-sm">Designed & Developed by <a href="https://www.instagram.com/ig._anand0023" target="_blank" class="font-bold text-yellow-500 hover:text-yellow-600 transition duration-200">MSD ANAND KUMAR</a></p>
+    </div>
+  </div>
+</footer>
+<!-- Footer Ends-->
+
+<!-- Developer Section Popup -->
+<div id="developerOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+<div id="developerSection"
+  class="fixed top-0 left-0 w-full h-full z-50 hidden flex items-center justify-center px-2">
+  <div class="bg-gradient-to-br from-white via-orange-300 to-orange-400 text-gray-800 max-w-5xl w-full relative rounded-lg shadow-2xl p-5 md:p-12 overflow-auto max-h-[90vh]" onclick="event.stopPropagation();">
+    <button onclick="closeDeveloperSection()" class="absolute top-4 right-4 text-2xl text-orange-800 hover:text-red-600 transition">&times;</button>
+    
+    <h2 class="text-lg md:text-5xl font-extrabold mb-2 md:mb-6 text-orange-800 text-center">Meet the Developer</h2>
+    
+    <p class="text-sm md:text-xl text-gray-800 mb-4 md:mb-10 leading-relaxed font-medium text-center">
+      I'm <strong class="text-orange-900">Anand Kumar</strong>, a passionate <strong class="text-orange-900">MERN Stack Developer</strong> who transforms ideas into powerful digital tools. From fast-loading websites to scalable backend systems — I create products that solve real problems.
+    </p>
+    
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-10">
+      <img src="./assets/images/profile-img.png" alt="Anand Kumar"
+           class="w-40 h-40 rounded-full object-cover shadow-xl border-4 border-white hover:scale-105 transition-transform duration-300">
+      <div class="text-left">
+        <h3 class="text-2xl font-bold text-orange-900 mb-1">Anand Kumar</h3>
+        <p class="text-sm text-gray-700 mb-1 italic">Software Engineer | MERN Stack Developer</p>
+        <p class="text-sm text-gray-800 md:mb-4 max-w-md">
+          I'm here to help you bring your visions to life. Whether you're launching a startup or upgrading your personal brand, let's build something impactful together.
+        </p>
+        <div class="flex flex-wrap items-center gap-5 mt-2 md:mt-4 text-lg font-medium">
+          <a href="mailto:glal2461@gmail.com" class="flex items-center gap-2 text-orange-800 hover:text-orange-900 transition">
+            <i class="fas fa-envelope text-lg"></i>
+          </a>
+          <a href="https://wa.me/918708483221" target="_blank" class="flex items-center gap-2 text-green-700 hover:text-green-800 transition">
+            <i class="fab fa-whatsapp text-lg"></i>
+          </a>
+          <a href="https://instagram.com/ig._anand0023" target="_blank" class="flex items-center gap-2 text-pink-700 hover:text-pink-800 transition">
+            <i class="fab fa-instagram text-lg"></i>
+          </a>
+          <a href="tel:+918708483221" class="flex items-center gap-2 text-blue-700 hover:text-blue-800 transition">
+            <i class="fa-solid fa-phone text-lg"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-3 md:mt-12">
+      <p class="text-lg md:text-xl font-semibold text-orange-900 mb-1">Let’s Build Something Amazing</p>
+      <p class="text-sm font-bold md:text-lg text-gray-800">
+        Got a project in mind? Or need a reliable developer for your CSC, Business, Insurance, or Government-related services? Let's build something impactful — together.
+      </p>
+    </div>
+
+    <!-- Add your quote section here -->
+    <div class="mt-10 text-center border-t pt-6 border-orange-300">
+      <p class="text-lg md:text-xl italic font-medium text-gray-700">
+        "Code is not just syntax, it's a story — and I write stories that solve problems."
+      </p>
+      <p class="text-sm text-orange-900 font-semibold mt-2">– Anand Kumar</p>
+    </div>
+
+  </div>
+</div>
+<!-- Developer Section Popup Ends-->
+
+<!-- Mobile Menu Toggle Script -->
+<script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    toggleBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+</script>
+ 
+<!-- View all services -->
+<script>
+  function toggleServices(button) {
+    const ul = button.previousElementSibling;
+    const allItems = ul.querySelectorAll('li');
+    const defaultVisibleCount = 5;
+    const isCurrentlyExpanded = !allItems[defaultVisibleCount].classList.contains('hidden');
+    allItems.forEach((li, index) => {
+      if (index >= defaultVisibleCount) {
+        li.classList.toggle('hidden', isCurrentlyExpanded);
+      }
+    });
+    button.textContent = isCurrentlyExpanded ? 'View All Services' : 'View Less Services';
+  }
+  window.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('#services ul').forEach(ul => {
+      ul.querySelectorAll('li').forEach((li, index) => {
+        if (index >= 5) li.classList.add('hidden');
+      });
+    });
+  });
+</script>
+
+<!-- JavaScript For About Developer Section  -->
+<script>
+  const developerBtn = document.getElementById('developerBtn');
+  const developerSection = document.getElementById('developerSection');
+  const developerOverlay = document.getElementById('developerOverlay');
+
+  developerBtn.addEventListener('click', () => {
+    developerSection.classList.remove('hidden');
+    developerOverlay.classList.remove('hidden');
+    document.body.style.overflow = 'hidden'; // Lock scrolling
+  });
+
+  developerOverlay.addEventListener('click', closeDeveloperSection);
+
+  function closeDeveloperSection() {
+    developerSection.classList.add('hidden');
+    developerOverlay.classList.add('hidden');
+    document.body.style.overflow = 'auto'; // Enable scroll
+  }
+</script>
+
+<!-- JavaScript For Review Section  -->
+<script>
+const reviews = [
+  {
+    name: "Kareena Tanwar",
+    gender: "female",
+    stars: 5,
+    text: "Thank you Rao Solution Hub for helping me with my LIC policy so smoothly. Truly hassle-free service!"
+  },
+  {
+    name: "Akshay Rao",
+    gender: "male",
+    stars: 5,
+    text: "Big thanks to Narender Master! Health insurance process was super fast and clearly explained."
+  },
+  {
+    name: "Manish Tondak",
+    gender: "male",
+    stars: 5,
+    text: "CSC services were top-notch. From PAN card to electricity bill — everything done in one place!"
+  },
+  {
+    name: "Ritika Yadav",
+    gender: "female",
+    stars: 5,
+    text: "Rao Solution Hub ne mera LIC maturity claim bina stress ke clear karwaya. Thank you so much!"
+  },
+  {
+    name: "Pankaj Shooter",
+    gender: "male",
+    stars: 4,
+    text: "Health insurance renew karna kabhi itna simple nahi laga. All credit goes to Rao Solution Hub."
+  },
+  {
+    name: "Kanika Sharma",
+    gender: "female",
+    stars: 5,
+    text: "Narender Master ji kaam ko itni clarity se samjhate hain ki confusion ka koi chance hi nahi hota!"
+  },
+  {
+    name: "Khushi Prashar",
+    gender: "female",
+    stars: 5,
+    text: "LIC aur CSC ke kaam ke liye sabse reliable jagah — Rao Solution Hub. Dil se recommend karti hoon!"
+  },
+    {
+    name: "Ashish Kumar",
+    gender: "male",
+    stars: 5,
+    text: "Rao Solution Hub ne meri LIC premium issue 24 hours ke andar solve kar di. Bahut hi fast aur reliable service!"
+  },
+  {
+    name: "Simran Beniwal",
+    gender: "female",
+    stars: 5,
+    text: "Thank you Narender Master for helping me understand health insurance in such a simple way. Fully satisfied!"
+  },
+  {
+    name: "Deepak Yaduvanshi",
+    gender: "male",
+    stars: 5,
+    text: "Main 3 saal se yahan se apne saare CSC works karwa raha hoon. Never had any issue. Great work team!"
+  },
+  {
+    name: "Prinshika Nandal",
+    gender: "female",
+    stars: 5,
+    text: "Narender Sir ne mujhe LIC surrender process bina delay ke complete karwaya. Thank you for being so helpful!"
+  },
+  {
+    name: "Veer Pal Yadav",
+    gender: "male",
+    stars: 4,
+    text: "Electricity bill se leke insurance claim tak, sab kuch ek hi jagah ho gaya. Kudos to Rao Solution Hub!"
+  },
+  {
+    name: "Anjali Dalal",
+    gender: "female",
+    stars: 5,
+    text: "LIC claim ka process mere liye confusing tha, but Narender Master ne sab clear kar diya. Trustworthy service!"
+  },
+  {
+    name: "Yashika Bhatia",
+    gender: "male",
+    stars: 5,
+    text: "Mujhe health policy chahiye thi family ke liye. Rao Solution Hub ne best plan suggest kiya, I'm grateful!"
+  },
+  {
+    name: "Deeksha Solanki",
+    gender: "female",
+    stars: 5,
+    text: "Thank you team Rao Solution Hub, aap logon ne mere sab documents timely aur perfect handle kiye."
+  }
+];
+
+
+const cardTemplate = document.getElementById("testimonial-card-template");
+const marqueeTrack = document.getElementById("marquee-track");
+const malePhoto = "https://randomuser.me/api/portraits/men/32.jpg";
+const femalePhoto = "https://randomuser.me/api/portraits/women/44.jpg";
+function createStars(starCount) {
+  const fullStar = "★";
+  const emptyStar = "☆";
+  return fullStar.repeat(starCount) + emptyStar.repeat(5 - starCount);
+}
+for (let i = 0; i < 2; i++) {
+  reviews.forEach(review => {
+    const card = cardTemplate.content.cloneNode(true);
+    card.querySelector("p.text-lg").textContent = review.name;
+    const ratingElem = card.querySelector("p.text-yellow-400");
+    ratingElem.innerHTML = createStars(review.stars) + ` <span class="text-sm text-gray-500 ml-2">(${review.stars} stars)</span>`;
+    card.querySelector("p.text-gray-700").textContent = review.text;
+    const imgElem = card.querySelector("img");
+    imgElem.src = review.gender === "male" ? malePhoto : femalePhoto;
+    imgElem.alt = `${review.name} photo`;
+    marqueeTrack.appendChild(card);
+  });
+}
+</script>
+
+<!-- JavaScript For Scrolling Services Logo Section  -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const scrollContainer = document.getElementById('service-strip');
+    const cardWidth = 160;
+    const gap = 14;
+    const scrollAmount = cardWidth + gap;
+    let autoScrollInterval;
+    function startAutoScroll() {
+      autoScrollInterval = setInterval(() => {
+        const atEnd = scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth - 1;
+        if (atEnd) {
+          scrollContainer.scrollLeft = 0;
+        } else {
+          scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+      }, 3000);
+    }
+    startAutoScroll();
+  });
+</script>
+
+</body>
+</html>
